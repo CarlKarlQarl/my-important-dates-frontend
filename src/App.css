@@ -3,7 +3,7 @@
   margin: 0px;
 }
 
-h1 {
+#title-h1 {
   border-style: solid;
   border-width: 3px;
   border-color: red;
@@ -20,7 +20,7 @@ form {
 
   border-style: solid;
   border-width: 3px;
-  border-color: orange;
+  border-color: green;
   margin: 5px;
 }
 
@@ -30,23 +30,30 @@ form {
 
   border-style: solid;
   border-width: 3px;
-  border-color: blue;
+  border-color: red;
   margin: 5px;
 }
 
 #sign-in-container {
   border-style: solid;
   border-width: 3px;
-  border-color: green;
+  border-color: blue;
   margin: 5px;
 }
 
 #calendar-container {
   border-style: solid;
   border-width: 3px;
-  border-color: purple;
+  border-color: blue;
   margin: 5px;
   flex: 1;
+}
+
+#month-h1 {
+  border-style: solid;
+  border-width: 3px;
+  border-color: purple;
+  margin: 5px;
 }
 
 #weeks-container {
@@ -56,7 +63,7 @@ form {
 
   border-style: solid;
   border-width: 3px;
-  border-color: turquoise;
+  border-color: purple;
   margin: 5px;
 }
 

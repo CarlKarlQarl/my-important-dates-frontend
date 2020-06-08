@@ -10,7 +10,7 @@ function Calendar({ month, length }) {
 
     return (
         <div id="calendar-container">
-            <h1>{month}</h1>
+            <h1 id="month-h1">{month}</h1>
             <div id="weeks-container">
                 {weeks}
             </div>
