@@ -12,7 +12,10 @@ function App() {
           <AuthFrom title="Sign-Up" />
           <AuthFrom title="Sign-In" />
         </div>
-        <Calendar />
+        <Calendar 
+          month="Undecimber"
+          length={31}
+        />
       </div>
       
     </div>
