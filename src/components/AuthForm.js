@@ -1,8 +1,11 @@
 import React from "react"
 
-function AuthForm({ title }) {
+function AuthForm({ title, setFakeToken }) {
     return (
-        <form>
+        <form onSubmit={(event) => {
+                event.preventDefault()
+                setFakeToken(true)
+            }}>
             <p>{title}</p>
             <input placeholder="Enter username"/>
             <input placeholder="Enter password"/>
