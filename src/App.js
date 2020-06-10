@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AuthFrom from "./components/AuthForm"
-import Calendar from "./components/Calendar"
+import NewEvent from "./components/NewEvent"
+import EventList from "./components/EventList"
 import './App.css';
 
 function App() {
+  const [ date, setDate ] = useState(new Date())
+  const [ events, setEvents ] = useState([])
+
   return (
     <div className="App">
       <h1 id="title-h1">My Important Dates</h1>
@@ -12,10 +16,13 @@ function App() {
           <AuthFrom title="Sign-Up" />
           <AuthFrom title="Sign-In" />
         </div>
-        <Calendar 
-          month="Undecimber"
-          length={31}
+        <NewEvent 
+          date={date} 
+          setDate={setDate}
+          events={events}
+          setEvents={setEvents}  
         />
+        <EventList events={events}/>
       </div>
       
     </div>
