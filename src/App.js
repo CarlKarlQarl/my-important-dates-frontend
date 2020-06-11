@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import AuthFrom from "./components/AuthForm"
-import NewEvent from "./components/NewEvent"
-import EventList from "./components/EventList"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SigninScreen from "./screens/SigninScreen"
+import HomeScreen from "./screens/HomeScreen"
 import './App.css';
 
 function App() {
@@ -20,25 +20,28 @@ function App() {
   })
 
   return (
-    <div className="App">
-      <h1 id="title-h1">My Important Dates</h1>
-      <div id="body-container">
-        <div id="sign-in-container">
-          <AuthFrom title="Sign-Up" setFakeToken={setFakeToken}/>
-          <AuthFrom title="Sign-In" setFakeToken={setFakeToken}/>
-          <button onClick={() => setFakeToken("")}>Log-out</button>
-          {fakeToken ? <h1>You are logged in!</h1> : null}
-        </div>
-        <NewEvent 
-          date={date} 
-          setDate={setDate}
-          events={events}
-          setEvents={setEvents}  
-        />
-        <EventList events={events}/>
+    <Router>
+      <div className="App">
+        <h1 id="title-h1">My Important Dates</h1>
+        <Switch>
+          <Route exact path="/">
+            <SigninScreen 
+              setFakeToken={setFakeToken}
+            />
+          </Route>
+          <Route path="/home">
+            <HomeScreen 
+              date={date} 
+              setDate={setDate} 
+              events={events} 
+              setEvents={setEvents}
+              fakeToken={fakeToken}
+              setFakeToken={setFakeToken}
+            />
+          </Route>
+        </Switch>
       </div>
-      
-    </div>
+    </Router>
   );
 }
 
