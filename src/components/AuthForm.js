@@ -5,11 +5,14 @@ function AuthForm({ title, setFakeToken }) {
     const history = useHistory()
 
     return (
-        <form onSubmit={(event) => {
+        <form 
+            id="authform-form"
+            onSubmit={(event) => {
                 event.preventDefault()
                 setFakeToken(true)
                 history.push("/home")
-            }}>
+            }
+        }>
             <p>{title}</p>
             <input placeholder="Enter username"/>
             <input placeholder="Enter password"/>
