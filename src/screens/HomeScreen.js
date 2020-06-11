@@ -7,7 +7,7 @@ function HomeScreen({ date, setDate, events, setEvents, fakeToken, setFakeToken 
     const history = useHistory()
 
     return (
-        <div>
+        <div id="home-div">
             {fakeToken 
                 ? <>
                     <h1>Welcome User123!</h1>

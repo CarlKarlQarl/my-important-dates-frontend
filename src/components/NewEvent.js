@@ -11,7 +11,8 @@ function NewEvent({ date, setDate, events, setEvents }) {
             id="new-event-div"
         >
             <h3>Add New Event</h3>
-            <form 
+            <form
+                id="new-event-form"
                 onSubmit={(event) => {
                     event.preventDefault()
                     setEvents([...events, {title, description, date}])
