@@ -1,9 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
+// import { useSelector, useDispatch } from "react-redux"
 import NewEvent from "../components/NewEvent"
 import EventList from "../components/EventList"
 
-function HomeScreen({ date, setDate, events, setEvents, fakeToken, setFakeToken }) {
+function HomeScreen({ fakeToken, setFakeToken }) {
+    const [ date, setDate ] = useState(new Date())
+    const [ events, setEvents ] = useState([])
+
+    // const events = useSelector(state => state)
+    // const dispatch = useDispatch()
+
     const history = useHistory()
 
     return (
