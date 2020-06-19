@@ -1,9 +1,7 @@
-import React from "react"
-
-function reducer(state = {events: []}, action){
+function reducer(state = [], action){
     switch (action.type){
         case "add_event":
-            return [...state.events, action.payload]
+            return [...state, action.payload]
         default:
             return state
     }
