@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
 
-function NewEvent({ date, setDate, events, setEvents }) {
+function NewEvent({ date, setDate, eventDispatch }) {
     const [ title, setTitle ] = useState("")
     const [ description, setDescription ] = useState("")
 
@@ -15,7 +15,7 @@ function NewEvent({ date, setDate, events, setEvents }) {
                 id="new-event-form"
                 onSubmit={(event) => {
                     event.preventDefault()
-                    setEvents([...events, {title, description, date}])
+                    eventDispatch({type: "add_event", payload: {title, description, date}})
                 }}
             >
                 <input 

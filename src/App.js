@@ -5,8 +5,6 @@ import HomeScreen from "./screens/HomeScreen"
 import './App.css';
 
 function App() {
-  const [ date, setDate ] = useState(new Date())
-  const [ events, setEvents ] = useState([])
   const [ fakeToken, setFakeToken ] = useState(localStorage.getItem("fakeToken") || "")
 
   useEffect(() => {
@@ -30,11 +28,7 @@ function App() {
             />
           </Route>
           <Route path="/home">
-            <HomeScreen 
-              date={date} 
-              setDate={setDate} 
-              events={events} 
-              setEvents={setEvents}
+            <HomeScreen
               fakeToken={fakeToken}
               setFakeToken={setFakeToken}
             />
