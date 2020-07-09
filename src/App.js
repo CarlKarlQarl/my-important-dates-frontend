@@ -5,15 +5,15 @@ import HomeScreen from "./screens/HomeScreen"
 import './App.css';
 
 function App() {
-  const [ fakeToken, setFakeToken ] = useState(localStorage.getItem("fakeToken") || "")
+  const [ token, setToken ] = useState(localStorage.getItem("token") || "")
 
   useEffect(() => {
-    if (fakeToken) {
-      localStorage.setItem("fakeToken", fakeToken)
-      console.log("Stored fake token:", fakeToken)
+    if (token) {
+      localStorage.setItem("token", token)
+      console.log("Stored fake token:", token)
     } else {
-      localStorage.removeItem("fakeToken")
-      console.log("Removed fakeToken")
+      localStorage.removeItem("token")
+      console.log("Removed token")
     }
   })
 
@@ -24,13 +24,13 @@ function App() {
         <Switch>
           <Route exact path="/">
             <SigninScreen 
-              setFakeToken={setFakeToken}
+              setToken={setToken}
             />
           </Route>
           <Route path="/home">
             <HomeScreen
-              fakeToken={fakeToken}
-              setFakeToken={setFakeToken}
+              token={token}
+              setToken={setToken}
             />
           </Route>
         </Switch>
