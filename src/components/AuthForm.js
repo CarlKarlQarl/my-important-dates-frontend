@@ -1,7 +1,7 @@
 import React from "react"
 import { useHistory } from "react-router-dom"
 
-function AuthForm({ title, setFakeToken }) {
+function AuthForm({ title, route, setToken }) {
     const history = useHistory()
 
     return (
@@ -9,7 +9,7 @@ function AuthForm({ title, setFakeToken }) {
             id="authform-form"
             onSubmit={(event) => {
                 event.preventDefault()
-                setFakeToken(true)
+                setToken(true)
                 history.push("/home")
             }
         }>
